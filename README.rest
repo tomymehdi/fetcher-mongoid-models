@@ -1,0 +1,15 @@
+To Test and play with mongoid !!
+
+how to
+======
+
+- mongod 
+- bundle
+- ruby app.rb
+- visit localhost:port
+
+
+
+
+
+

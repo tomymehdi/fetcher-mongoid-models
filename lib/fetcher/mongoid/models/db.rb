@@ -1,12 +1,16 @@
-require 'sinatra/base'
 require 'mongoid'
 require 'pry'
-require 'models'
 
-class DB
-  def initialize path_to_mongoid_yml
-    Mongoid.load!('path_to_mongoid_yml', :development)
+module Fetcher
+  module Mongoid
+    module Models
+      class DB
+
+        def initialize path_to_mongoid_config
+          ::Mongoid.load!(path_to_mongoid_config, :development)
+        end
+
+      end
+    end
   end
 end
-
-

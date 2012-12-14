@@ -1,15 +1,33 @@
-To Test and play with mongoid !!
+Usage examples
 
-how to
-======
+In folder config is a examples of a configuration file, for more information go to 
 
-- mongod 
-- bundle
-- ruby app.rb
-- visit localhost:port
+http://mongoid.org/en/mongoid/docs/installation.html
 
+Example 1:
 
+Fetcher::Mongoid::Models::DB.new path_to_config_file
 
+u = User.new
+u.login = "hola soy tomy"
+u.save
+
+User.find(u._id)
+
+Example 2:
+
+I have a Valid Column and a Filter
+The filter is valid only if it references a valid column, to make this you need to make:
+
+Fetcher::Mongoid::Models::DB.new path_to_config_file
+
+  column = Column.new
+  column.save
+  f = Filter.new :Column => column
+  Filter::Column_id = column._id
+  f.save #<- this will return true
+
+We need to set the Filter::Column_id to let the Filters know to wich column it will belongs_to
 
 
 

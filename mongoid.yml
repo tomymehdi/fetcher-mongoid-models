@@ -1,7 +1,0 @@
-development:
-  sessions:
-    default:
-      database: fetcher-mongoid-models
-      hosts:
-        - localhost:27017
-
